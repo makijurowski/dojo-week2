@@ -1,5 +1,13 @@
 
-
+// Sound sprite object using howler.js
+var eatCoins = new Howl({
+  src: ['sounds/pacman_sounds.mp3'],
+  sprite: {
+    intro: [0, 4000],
+    coinChomp: [4200, 440],
+    fruitChomp: [5100, 740]
+  }
+});
 
 var score = 0;
 var pacman = {
@@ -33,10 +41,11 @@ function displayPacman() {
 }
 
 function displayScore() {
-  document.getElementById('score').innerHTML = score;
+  document.getElementById('score').innerHTML = '<h3>Score</h3>' + score;
 }
 
 // Update displays
+eatCoins.play('intro');
 displayWorld();
 displayPacman();
 displayScore();
@@ -67,6 +76,7 @@ document.onkeydown = function (e) {
   // update scores
   if (world[pacman.y][pacman.x] == 1) {
     world[pacman.y][pacman.x] = 0;
+    eatCoins.play('coinChomp');
     score += 10;
     displayWorld();
     displayScore();
@@ -74,6 +84,7 @@ document.onkeydown = function (e) {
 
   else if (world[pacman.y][pacman.x] == 3) {
     world[pacman.y][pacman.x] = 0;
+    eatCoins.play('fruitChomp');
     score += 50;
     displayWorld();
     displayScore();

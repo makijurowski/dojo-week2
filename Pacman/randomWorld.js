@@ -26,15 +26,17 @@ function makeAWorld(x, y) {
   world[world.length - 1].fill(2);
   var genWorld = world;
   //add in random bricks
-  let brickNum = Math.floor((Math.random() * (worldSizeY * (worldSizeX / 5)) + 10));
+  let brickNum = Math.floor((Math.random() * (worldSizeY * (worldSizeX / 5)) + 20));
   // console.log('brickNum: ' + brickNum);
-  let cherryNum = Math.floor((Math.random() * (worldSizeY / 4)) + 1);
-  console.log('cherryNum: ' + cherryNum);
+  let cherryNum = Math.floor((Math.random() * (worldSizeY / 4)) + 4);
+  // console.log('cherryNum: ' + cherryNum);
 
   function addRandomBricks(world, brickNum) {
     let randomX = Math.floor((Math.random() * worldSizeX - 1) + 1);
+    console.log("random x-value for bricks: " + randomX);
     // console.log('randomX: ' + randomX);
-    let randomY = Math.floor((Math.random() * worldSizeY - 1) + 1);
+    let randomY = Math.floor((Math.random() * worldSizeY + 1) + 1);
+    console.log("random y-value for bricks: " + randomY);
     // console.log('randomY: ' + randomY);
     let pos = world[randomX][randomY];
     // let posLeft = world[randomX - 1][randomY];
@@ -69,7 +71,9 @@ function makeAWorld(x, y) {
 
   function addRandomCherries(world, cherryNum) {
     let randomX = Math.floor((Math.random() * worldSizeX - 1) + 1);
+    console.log("random x-value for cherries: " + randomX);
     let randomY = Math.floor((Math.random() * worldSizeY - 1) + 1);
+    console.log("random y-value for cherries: " + randomY);
     if (world[randomX][randomY] != 2 &&
       world[randomX][randomY] != undefined &&
       world[randomX][randomY] != 3) {
@@ -85,6 +89,8 @@ function makeAWorld(x, y) {
     // console.log("loop: " + m);
     genWorld = addRandomCherries(world, cherryNum);
   }
+  // Make initial position empty
+  genWorld[1][1] = 0;
   // END GENERATE RANDOM WORLD
   console.log(genWorld);
   return genWorld;
