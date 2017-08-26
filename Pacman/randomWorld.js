@@ -1,4 +1,4 @@
-// Decalre some variables
+// Declare some variables
 worldSizeX = 20;
 worldSizeY = 20;
 
@@ -26,9 +26,9 @@ function makeAWorld(x, y) {
   world[world.length - 1].fill(2);
   var genWorld = world;
   //add in random bricks
-  let brickNum = Math.floor((Math.random() * (worldSizeY * (worldSizeX / 10)) + 10));
+  let brickNum = Math.floor((Math.random() * (worldSizeY * (worldSizeX / 5)) + 10));
   // console.log('brickNum: ' + brickNum);
-  let cherryNum = Math.floor((Math.random() * (worldSizeY / 3)) + 1);
+  let cherryNum = Math.floor((Math.random() * (worldSizeY / 4)) + 1);
   console.log('cherryNum: ' + cherryNum);
 
   function addRandomBricks(world, brickNum) {
@@ -41,20 +41,27 @@ function makeAWorld(x, y) {
     // let posRight = world[randomX + 1][randomY];
     // let posUp = world[randomX][randomY + 1];
     // let posDown = world[randomX][randomY - 1];
-    console.log(pos);
+    //console.log(pos);
     if (pos != 2 && pos != undefined) {
-      pos = 0;
-      if (world[randomX - 1][randomY] != 2 && world[randomX - 1][randomY] != undefined) {
-        world[randomX - 1][randomY] = 0;
+      pos = 2;
+      if (world[randomX - 1][randomY] != 2 &&
+        world[randomX - 1][randomY] != undefined) {
+        world[randomX - 1][randomY] = 2;
       }
-      else if (world[randomX + 1][randomY] != 2 && world[randomX + 1][randomY] != undefined) {
-        world[randomX + 1][randomY] = 0;
+      else if (world[randomX + 1][randomY] != 2 &&
+        world[randomX + 1][randomY] != undefined &&
+        world[randomX][randomY] == 2) {
+        world[randomX + 1][randomY] = 2;
       }
-      else if (world[randomX][randomY - 1] != 2 && world[randomX][randomY - 1] != undefined) {
-        world[randomX][randomY - 1] = 0;
+      else if (world[randomX][randomY - 1] != 2 &&
+        world[randomX][randomY - 1] != undefined &&
+        world[randomX][randomY] == 2) {
+        world[randomX][randomY - 1] = 2;
       }
-      else if (world[randomX][randomY + 1] != 2 && world[randomX][randomY + 1] != undefined) {
-        world[randomX][randomY + 1] = 0;
+      else if (world[randomX][randomY + 1] != 2 &&
+        world[randomX][randomY + 1] != undefined &&
+        world[randomX][randomY] == 2) {
+        world[randomX][randomY + 1] = 2;
       }
     }
     return world;
@@ -63,20 +70,10 @@ function makeAWorld(x, y) {
   function addRandomCherries(world, cherryNum) {
     let randomX = Math.floor((Math.random() * worldSizeX - 1) + 1);
     let randomY = Math.floor((Math.random() * worldSizeY - 1) + 1);
-    if (world[randomX][randomY] != 2 && world[randomX][randomY] != undefined) {
+    if (world[randomX][randomY] != 2 &&
+      world[randomX][randomY] != undefined &&
+      world[randomX][randomY] != 3) {
       world[randomX][randomY] = 3;
-      if (world[randomX - 1][randomY] != 2 && world[randomX - 1][randomY] != undefined) {
-        world[randomX - 1][randomY] = 3;
-      }
-      else if (world[randomX + 1][randomY] != 2 && world[randomX + 1][randomY] != undefined) {
-        world[randomX + 1][randomY] = 3;
-      }
-      else if (world[randomX][randomY - 1] != 2 && world[randomX][randomY - 1] != undefined) {
-        world[randomX][randomY - 1] = 3;
-      }
-      else if (world[randomX][randomY + 1] != 2 && world[randomX][randomY + 1] != undefined) {
-        world[randomX][randomY + 1] = 3;
-      }
     }
     return world;
   }
@@ -89,6 +86,8 @@ function makeAWorld(x, y) {
     genWorld = addRandomCherries(world, cherryNum);
   }
   // END GENERATE RANDOM WORLD
+  console.log(genWorld);
   return genWorld;
 }
-console.log(makeAWorld(worldSizeX, worldSizeY));
+
+var world = makeAWorld(worldSizeX, worldSizeY);

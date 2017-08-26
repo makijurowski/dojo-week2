@@ -31,21 +31,21 @@ div.brick {
 }
 
 div.coin {
-  background: url('coin.gif');
+  background: url('images/coin.gif');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 5px;
 }
 
 div.cherries {
-  background: url('cherries.gif');
+  background: url('images/cherries.gif');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 18px;
 }
 
 div#pacman {
-  background: url('pacman.gif');
+  background: url('images/pacman.gif');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
