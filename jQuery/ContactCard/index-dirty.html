@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Contact Card</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+      var cardID = 0;
+
+      $('#submission').click(function() {
+        var firstName = $('#formFirstName').val();
+        var lastName = $('#formLastName').val();
+        var description = $('#formDescription').val();
+
+        //var newCard = "<div class='contactCard' id='cardID'><span id='ccName' class='ccName'>" + firstName + lastName + "</span><span id='ccDescription' class='ccDescription'>" + description + "</span></div>";
+
+
+        var newCard = "<div class='contactCard'><span id='ccName' class='ccName'>" + firstName + lastName + "</span><span id='ccDescription' class='ccDescription'>" + description + "</span><button id='showDescription'>Click to see description</button></div>";
+
+        // $("#ccName").append(firstName + lastName);
+        // $("#ccDescription").append(description);
+
+        $('#contacts').append(newCard);
+        //$(cardID).load(function() {
+        //  cardID++
+        //})
+
+        $('#showDescription').css('background-color', 'red');
+        $('#showDescription').click(function() {
+          if ($(this).text() == 'Click to see description') {
+            $('#ccDescription').css('display', 'block');
+            $('#showDescription').text('Click to hide description');
+          }
+          else {
+            $('#ccDescription').css('display', 'none');
+            $('#showDescription').text('Click to see description');
+          }
+        })
+
+        return false;
+      })
+
+      $('#button1').css('background-color', 'red');
+      $('#button1').click(function() {
+        if ($(this).text() == 'Hide the Text') {
+          $('#function1p').toggle('hide');
+          $('#button1').text('Show the Text');
+        }
+        else {
+          $('#function1p').toggle('show');
+          $('#button1').text('Hide the Text');
+        }
+      })
+
+      $('#button2').css('background-color', 'orange');
+      $('#button2').click(function() {
+        if ($(this).text() == 'Slide to Hide Text') {
+          $('#function2p').slideUp('hide');
+          $('#button2').text('Slide to Show Text');
+        }
+        else {
+          $('#function2p').slideDown('show');
+          $('#button2').text('Slide to Hide Text');
+        }
+      })
+
+      $('#button3').css('background-color', 'yellow');
+      $('#button3').click(function() {
+        $('#function3p').slideToggle("fast");
+      })
+
+      $('#button4').css('background-color', 'green');
+      $('#button4').click(function() {
+        if ($(this).text() == 'Fade Out the Text') {
+          $('#function4p').fadeOut('hide');
+          $('#button4').text('Fade In the Text');
+        }
+        else {
+          $('#function4p').fadeIn('show');
+          $('#button4').text('Fade Out the Text');
+        }
+      })
+
+      $('#button5').css('background-color', 'cyan');
+      $('#button5').click(function() {
+        $('#function5p').addClass("bold");
+      })
+
+      $('#button6').css('background-color', 'purple');
+      $('#button6').click(function() {
+        $('#function6p').before("<p>This wasn't here before!</p>");
+        $('#function6p').after("<p>Neither was this!</p>");
+      })
+
+      $('#button7').css('background-color', 'red');
+      $('#button7').click(function() {
+        $('#function7p').append("This wasn't here before!");
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+
+    <div id="userForm">
+      <form>
+        <h1 class="title">Add a New Contact</h1>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="formFirstName" name="first_name">
+        <p></p>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="formLastName" name="last_name">
+        <p></p>
+
+        <label for="description">Description:</label>
+        <input type="textarea" rows="4" cols="50" id="formDescription" name="description">
+        <p></p>
+
+        <button class="button" id="submission">Add Contact</button>
+
+      </form>
+    </div>
+
+    <div id="contacts">
+
+
+
+    </div>
+
+  </div>
+</body>
+</html>

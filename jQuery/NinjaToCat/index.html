@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cat to Ninja</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script>
+  $(document).ready(function(){
+    $('#catPic0').click(function() {
+      newURL = $('#cat0').attr('data-alt-src');
+      $('#cat0').toggle('hide');
+      $('#cat0').attr('src',newURL);
+      $('#cat0').toggle('show');
+    })
+    $('#catPic1').click(function() {
+      newURL = $('#cat1').attr('data-alt-src');
+      $('#cat1').toggle('hide');
+      $('#cat1').attr('src',newURL);
+      $('#cat1').toggle('show');
+    })
+    $('#catPic2').click(function() {
+      newURL = $('#cat2').attr('data-alt-src');
+      $('#cat2').toggle('hide');
+      $('#cat2').attr('src',newURL);
+      $('#cat2').toggle('show');
+    })
+    $('#catPic3').click(function() {
+      newURL = $('#cat3').attr('data-alt-src');
+      $('#cat3').toggle('hide');
+      $('#cat3').attr('src',newURL);
+      $('#cat3').toggle('show');
+    })
+    $('#catPic4').click(function() {
+      newURL = $('#cat4').attr('data-alt-src');
+      $('#cat4').toggle('hide');
+      $('#cat4').attr('src',newURL);
+      $('#cat4').toggle('show');
+    })
+  })
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="myDiv" id="catPic0"><img alt="cat" class="image" data-alt-src="images/ninja0.png" id="cat0" src="images/cat0.png"></div>
+    <div class="myDiv" id="catPic1"><img alt="cat" class="image" data-alt-src="images/ninja1.png" id="cat1" src="images/cat1.png"></div>
+    <div class="myDiv" id="catPic2"><img alt="cat" class="image" data-alt-src="images/ninja2.png" id="cat2" src="images/cat2.png"></div>
+    <div class="myDiv" id="catPic3"><img alt="cat" class="image" data-alt-src="images/ninja3.png" id="cat3" src="images/cat3.png"></div>
+    <div class="myDiv" id="catPic4"><img alt="cat" class="image" data-alt-src="images/ninja4.png" id="cat4" src="images/cat4.png"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+table, th, td {
+  border: 1px solid #ffffff;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+h1 {
+  display: block;
+  margin: 50px auto 15px 30px;
+  font-size: 150%;
+}
+
+label {
+  margin: 5px auto 15px 30px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+#wrapper {
+  width: 970px;
+  min-height: 800px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+#formDataTable {
+  margin: 20px;
+}
+
+.button {
+  margin: 10px auto 10px 50px;
+  vertical-align: middle;
+  display: block;
+  padding: 8px;
+  width: 125px;
+  font-size: 90%;
+  font-weight: 600;
+  border: 2px solid #FFFFFF;
+}

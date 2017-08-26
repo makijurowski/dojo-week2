@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Dynamic Form Submission</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('#submission').click(function() {
+        var firstName = $('#formFirstName').val();
+        var lastName = $('#formLastName').val();
+        var email = $('#formEmail').val();
+        var phone = $('#formPhone').val();
+        var newRow = "<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + email + "</td><td>" + phone + "</td></tr>";
+        $("table tbody").append(newRow);
+        return false;
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <table id="formDataTable">
+      <thead>
+      <tr class="tableHeader">
+        <th class="tableHeader">First Name</th>
+        <th class="tableHeader">Last Name</th>
+        <th class="tableHeader">Email Address</th>
+        <th class="tableHeader">Contact #</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="formEntry">
+        <td class="formEntry" id="tableFirstName">John</td>
+        <td class="formEntry" id="tableLastName">Doe</td>
+        <td class="formEntry" id="tableEmail">johndoe@gmail.com</td>
+        <td class="formEntry" id="tablePhone">123-456-7890</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div id="userForm">
+      <form>
+        <h1 class="title">Add User</h1>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="formFirstName" name="first_name">
+        <p></p>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="formLastName" name="last_name">
+        <p></p>
+
+        <label for="email">Email:</label>
+        <input type="text" id="formEmail" name="email">
+        <p></p>
+
+        <label for="phone_number">Contact No.:</label>
+        <input type="text" id="formPhone" name="phone_number">
+        <p></p>
+
+        <button class="button" id="submission">Add User</button>
+
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

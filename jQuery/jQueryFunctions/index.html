@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Function Examples</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+
+      $('#button1').css('background-color', 'red');
+      $('#button1').click(function() {
+        if ($(this).text() == 'Hide the Text') {
+          $('#function1p').toggle('hide');
+          $('#button1').text('Show the Text');
+        }
+        else {
+          $('#function1p').toggle('show');
+          $('#button1').text('Hide the Text');
+        }
+      })
+
+      $('#button2').css('background-color', 'orange');
+      $('#button2').click(function() {
+        if ($(this).text() == 'Slide to Hide Text') {
+          $('#function2p').slideUp('hide');
+          $('#button2').text('Slide to Show Text');
+        }
+        else {
+          $('#function2p').slideDown('show');
+          $('#button2').text('Slide to Hide Text');
+        }
+      })
+
+      $('#button3').css('background-color', 'yellow');
+      $('#button3').click(function() {
+        $('#function3p').slideToggle("fast");
+      })
+
+      $('#button4').css('background-color', 'green');
+      $('#button4').click(function() {
+        if ($(this).text() == 'Fade Out the Text') {
+          $('#function4p').fadeOut('hide');
+          $('#button4').text('Fade In the Text');
+        }
+        else {
+          $('#function4p').fadeIn('show');
+          $('#button4').text('Fade Out the Text');
+        }
+      })
+
+      $('#button5').css('background-color', 'cyan');
+      $('#button5').click(function() {
+        $('#function5p').addClass("bold");
+      })
+
+      $('#button6').css('background-color', 'purple');
+      $('#button6').click(function() {
+        $('#function6p').before("<p>This wasn't here before!</p>");
+        $('#function6p').after("<p>Neither was this!</p>");
+      })
+
+      $('#button7').css('background-color', 'red');
+      $('#button7').click(function() {
+        $('#function7p').append("This wasn't here before!");
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+
+    <div class="newFunction">
+      <button class="testButton" id="button1">Hide the Text</button>
+      <h1>jQuery Example: .click .toggle .hide .show</h1>
+      <p id="function1p">
+        Click the button to the left to see an example of using .toggle upon button .click to .hide and .show elements using jQuery.
+      </p>
+    </div>
+
+    <div class="newFunction">
+      <button class="testButton" id="button2">Slide to Hide Text</button>
+      <h1>jQuery Example: .slideUp .slideDown</h1>
+      <p id="function2p">
+        Click the button to the left to see an example of using .toggle upon button .click to .slideUp and .slideDown elements using jQuery.
+      </p>
+    </div>
+
+    <div class="newFunction">
+      <button class="testButton" id="button3">Slide Toggle Text</button>
+      <h1>jQuery Example: .slideToggle</h1>
+      <p id="function3p">
+        Click the button to the left to see an example of using .slideToggle upon button .click to mimic the previous example (but faster!).
+      </p>
+    </div>
+
+    <div class="newFunction">
+      <button class="testButton" id="button4">Fade Out the Text</button>
+      <h1>jQuery Example: .fadeIn and .fadeOut</h1>
+      <p id="function4p">
+        Click the button to the left to see an example of using .fadeIn and .fadeOut upon button .click on elements using jQuery.
+      </p>
+    </div>
+
+    <div class="newFunction">
+      <button class="testButton" id="button5">Add a Class</button>
+      <h1>jQuery Example: .addClass</h1>
+      <p id="function5p">
+        Click the button to the left to see an example of adding a class to make this text bold using jQuery.
+      </p>
+    </div>
+
+    <div class="newFunction">
+      <button class="testButton" id="button6">Before & After</button>
+      <h1>jQuery Example: .before and .after</h1>
+      <p id="function6p">
+        Click the button to the left to see an example of adding an element before and after this text using jQuery.
+      </p>
+    </div>
+
+    <div class="newFunction">
+      <button class="testButton" id="button7">Append Text</button>
+      <h1>jQuery Example: .append</h1>
+      <p id="function7p">
+        Click the button to the left to see an example of adding text to a paragraph using the .append function in jQuery.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

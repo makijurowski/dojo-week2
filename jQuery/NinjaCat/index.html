@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New Website</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<script>
+  $(document).ready(function(){
+      $('#ninja1').click(function() {
+        $('#img1').toggle('hide');
+      })
+      $('#ninja2').click(function() {
+        $('#img2').toggle('hide');
+      })
+      $('#ninja3').click(function() {
+        $('#img3').toggle('hide');
+      })
+      $('#ninja4').click(function() {
+        $('#img4').toggle('hide');
+      })
+      $('#ninja5').click(function() {
+        $('#img5').toggle('hide');
+      })
+      $('#ninja6').click(function() {
+        $('#img6').toggle('hide');
+      })
+      $('#ninja7').click(function() {
+        $('#img7').toggle('hide');
+      })
+      $('#ninja8').click(function() {
+        $('#img8').toggle('hide');
+      })
+      $('button').click(function() {
+        $('.image').toggle('show');
+      })
+  })
+</script>
+<body>
+
+    <div id="wrapper">
+      <div id="row1">
+        <div id="ninja1" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img1" class="image" /></div>
+        <div id="ninja2" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img2" class="image" /></div>
+        <div id="ninja3" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img3" class="image" /></div>
+        <div id="ninja4" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img4" class="image" /></div>
+      </div>
+      <div id="row2">
+        <div id="ninja5" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img5" class="image" /></div>
+        <div id="ninja6" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img6" class="image" /></div>
+        <div id="ninja7" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img7" class="image" /></div>
+        <div id="ninja8" class="myDiv"><img src="images/ninja.png" alt="ninja" id="img8" class="image" /></div>
+      </div>
+
+      <button id="restore">Restore</button>
+
+    </div>
+
+</body>
+
+</html>
