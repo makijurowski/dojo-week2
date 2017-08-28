@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 
 // Sound sprite object using howler.js
 var eatCoins = new Howl({
@@ -93,4 +94,4 @@ document.onkeydown = function (e) {
   // log keystroke & update display
   console.log(e.keyCode);
   displayPacman();
-}
+};
