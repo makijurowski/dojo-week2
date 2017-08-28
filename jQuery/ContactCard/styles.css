@@ -10,15 +10,6 @@ body {
   font-size: 0.9em;
 }
 
-
-#wrapper {
-  width: 970px;
-  min-height: 800px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin: 0 auto;
-}
-
 button {
   margin: 6px 10px 6px 30px;
   display: block;
@@ -35,6 +26,23 @@ h1 {
   font-size: 150%;
 }
 
+h2 {
+  display: block;
+  margin: 10px;
+  font-size: 150%;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 80%;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid navy;
+  width: 200px;
+  padding: 5px 7px;
+  margin: 0 auto;
+}
+
 label {
   margin: 5px auto 15px 0;
 }
@@ -43,6 +51,15 @@ input {
   margin-bottom: 20px;
   padding: 5px;
 }
+
+#wrapper {
+  width: 970px;
+  min-height: 800px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
 
 #formDescription {
   height:100px;
@@ -53,7 +70,7 @@ input {
   width: 30%;
 }
 
-#contacts {
+.contacts {
   display: inline-block;
   vertical-align: top;
 }
@@ -61,19 +78,14 @@ input {
 .contactCard {
   width: 300px;
   height: 150px;
-  border: 2px dotted navy;
+  border: 2px dotted #CCCCCC;
   padding: 10px;
+  margin: 10px;
 }
 
-.ccName {
-  margin: 15px auto;
-  font-size: 150%;
-}
 
-#showDescription {
-  background-color: red;
-}
-
-#ccDescription {
-  display: none;
+.ccDescription {
+  margin-top: 10px;
+  font-style: italic;
+  padding: 10px;
 }
