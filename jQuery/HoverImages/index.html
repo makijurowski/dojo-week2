@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hover In/Out Assignment</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('img').hover(function() {
+        var temp = $(this).attr('src');
+        $(this).attr('src', $(this).attr('data-alt-src'));
+        $(this).attr('data-alt-src', temp);
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <img alt="Dress 1" class="image" data-alt-src="images/dress2.jpg" temp="" id="d1" src="images/dress1.jpg" />
+    <img alt="Dress 2" class="image" data-alt-src="images/dress3.jpg" temp="" id="d2" src="images/dress2.jpg" />
+    <img alt="Dress 3" class="image" data-alt-src="images/dress4.jpg" temp="" id="d3" src="images/dress3.jpg" />
+    <img alt="Dress 4" class="image" data-alt-src="images/dress1.jpg" temp="" id="d4" src="images/dress4.jpg" />
+
+  </div>
+
+</body>
+
+</html>
