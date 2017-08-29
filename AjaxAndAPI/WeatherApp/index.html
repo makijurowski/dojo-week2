@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Weather App</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function (){
+    $('form').submit(function () {
+
+      var searchTerm = $('#searchTerm').val();
+      let newSearchTerm = '';
+      for (let i = 0; i < searchTerm.length; i++) {
+        if (searchTerm.charAt(i) === ' ') {
+          newSearchTerm = newSearchTerm + '%20';
+        }
+        else {
+          newSearchTerm = newSearchTerm + searchTerm.charAt(i);
+        }
+      }
+      console.log(newSearchTerm);
+
+      var APPID = '&&appid=' + '184f12b1abd6f2889f5e2811697a5f37';
+      var ACCESSURL = 'http://api.openweathermap.org/data/2.5/weather?'
+      var QUERY = 'q=' + newSearchTerm + '';
+      var url = ACCESSURL + QUERY + APPID;
+      var GMAPSURL1 = 'https://maps.googleapis.com/maps/api/staticmap?center=' + newSearchTerm + '&zoom=13&scale=2&size=600x275&maptype=terrain&key=AIzaSyBl2xteHzd2BbmBCIDkZXGEYXQcWTnZMDg&format=png&visual_refresh=false';
+
+      console.log('URL being sent: ' + url);
+      $.get(url, function (data) {
+        console.log(data);
+        var name = data.name;
+        var temp = (((data.main.temp) - 273.15) * 1.8) + 32;
+        console.log(temp);
+        console.log(GMAPSURL1);
+        var html = ` 
+                    <img src="` + GMAPSURL1 + `" alt ="Your City" />
+                    <h1>${data.name}</h1>
+                    <p><b>Current Temp in Kelvins:</b> ${data.main.temp}</p>
+                    <p><b>Current Temp in Fahrenheight:</b> ` + temp + ` `
+        $('#Details').html(html);
+      }, 'json');
+      // don't forget to return false so the page doesn't refresh
+      return false;
+    });
+  });
+  </script>
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <form class="form" action="" method="get">
+      <label for="searchTerm">Search for Weather Report</label>
+      <input id="searchTerm" type="text" name="searchTerm" value="Seattle, WA">
+      <input type="submit" name="form" value="Search">
+    </form>
+
+    <div id="Details">
+    </div>
+
+  </div>
+
+</body>
+
+</html>
